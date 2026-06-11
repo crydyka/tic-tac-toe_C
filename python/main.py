@@ -152,10 +152,10 @@ class TTT_Gamestate:
         return out_x, out_y
 
 class TTT_Game:
-    def __init__(self, gs: TTT_Gamestate):
+    def __init__(self):
         self.texture_X = None
         self.texture_O = None
-        self.gs = gs
+        self.gs = TTT_Gamestate()
 
     def update_screen(self) -> None:
         rl.begin_drawing()
@@ -259,8 +259,7 @@ class TTT_Game:
         rl.close_window()
 
 def main():
-    gs = TTT_Gamestate()
-    game = TTT_Game(gs)
+    game = TTT_Game()
     game.mainloop()
 
 if __name__ == "__main__":
